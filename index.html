@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Solar PH | Clean Energy. Brighter Future.</title>
+    <meta name="description" content="Pro Solar PH provides smart solar solutions for every Filipino. Based in Antipolo, Rizal. Save on electricity bills today.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for Branding */
+        :root {
+            --primary-blue: #002B5B;
+            --primary-red: #D61C1C;
+            --primary-yellow: #F4B400;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 43, 91, 0.8), rgba(0, 43, 91, 0.8)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #b01515;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background-color: var(--primary-yellow);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Services / Features */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            background-color: var(--bg-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background-color: #ccc;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info strong {
+            color: var(--primary-blue);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Floating Messenger Button */
+        .float-messenger {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0084FF;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .float-messenger:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; /* Add a hamburger menu in production */ }
+            .trust-bar { flex-direction: column; gap: 1rem; }
+            .contact-container { grid-template-columns: 1fr; }
+            .btn-secondary { margin-left: 0; margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            PRO SOLAR <span>PH</span>
+        </div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#gallery">Installations</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Smart Solar Solutions For Every Filipino</h1>
+            <p>Clean Energy. Brighter Future. Take control of your electricity bills with our premium solar installation services.</p>
+            <div>
+                <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+                <a href="https://m.me/prosolarphantipolo" target="_blank" class="btn btn-secondary">Message Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div>⭐ Trusted by 46K+ Followers</div>
+        <div>📍 Based in Antipolo, Rizal</div>
+        <div>🔋 Clean Energy Experts</div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Solar Services</h2>
+            <p>Tailored solutions for residential and commercial needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Residential Installation</h3>
+                <p>Power your home with clean energy. We design systems that significantly slash your monthly Meralco bills.</p>
+            </div>
+            <div class="service-card">
+                <h3>Commercial & Industrial</h3>
+                <p>Scale your business and reduce overhead costs with high-capacity solar panel arrays built for durability.</p>
+            </div>
+            <div class="service-card">
+                <h3>Maintenance & Cleaning</h3>
+                <p>Keep your system running at peak efficiency with our professional cleaning and maintenance check-ups.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-title">
+            <h2>Recent Installations</h2>
+            <p>See how we've helped communities transition to clean energy.</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- Replace background-image URLs with their actual photos -->
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1592833159155-c62df1b65634?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1545209463-e2825498edbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get Your Free Assessment</h2>
+            <p>Ready to switch to solar? Reach out to us today.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <br>
+                <p>📍 <strong>Address:</strong> Blk 30 Lot 7, Sitio Maligaya, Brgy. San Isidro, Antipolo, Philippines, 1870</p>
+                <p>📞 <strong>Phone:</strong> 0976 056 5497</p>
+                <p>✉️ <strong>Email:</strong> ecomofficial1870@gmail.com</p>
+                <p>💬 <strong>Messenger:</strong> <a href="https://m.me/prosolarphantipolo" target="_blank">Pro Solar PH</a></p>
+            </div>
+            
+            <div class="contact-form">
+                <!-- ACTION: Replace 'YOUR_FORMSPREE_ENDPOINT' with your Formspree URL -->
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <input type="text" name="phone" placeholder="Your Phone Number" required>
+                    <textarea name="message" rows="5" placeholder="Tell us about your solar needs (e.g., Monthly bill amount, location)" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Pro Solar PH. All Rights Reserved. Clean Energy. Brighter Future.</p>
+        <p style="margin-top: 5px; font-size: 0.8rem; color: #a0a0a0;">Designed by Negosyo Web PH</p>
+    </footer>
+
+    <!-- Floating Messenger Button -->
+    <a href="https://m.me/prosolarphantipolo" class="float-messenger" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.25c0 2.922 1.387 5.516 3.553 7.242l-.928 2.883 3.217-1.66c1.127.343 2.332.535 3.558.535 5.523 0 10-4.145 10-9.25S17.523 2 12 2zm1.064 12.454l-2.497-2.665-4.874 2.665 5.362-5.688 2.563 2.665 4.808-2.665-5.362 5.688z"/></svg>
+        Message Us
+    </a>
+
+</body>
+</html>
